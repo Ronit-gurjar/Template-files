@@ -1,0 +1,24 @@
+''' A simple boiler template for Kivy app
+created by @Ronit-gurjar on GITHUB '''
+
+from kivy.app import App
+from kivy.uix.widget import Widget
+from kivy.lang import Builder
+
+Window.size = (480,720)#size of screen(MOBILE)
+Window.size = (1024,1200)#size of screen(DESKTOP)
+Builder.load_file('design.kv')#loading kivy file
+
+class MyLayout(Widget): #importing widget
+    pass
+
+class MyApp(App): #app initialization
+    def build(self):
+        return MyLayout()
+    
+if __name__ == '__main__': #app call
+    MyApp().run()
+
+#usally in windows, the terminal might throw an error as "Execution policy restriction"
+#use this command in terminal
+#>>> Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
